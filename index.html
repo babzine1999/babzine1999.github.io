@@ -133,6 +133,25 @@
             color: #666;
         }
 
+        .dashboard-gallery {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+        }
+
+        .dashboard-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-gallery img:hover {
+            transform: scale(1.03);
+        }
+
         .project-links {
             display: flex;
             gap: 10px;
@@ -321,6 +340,11 @@
                 </div>
                 <div class="project-body">
                     <p>Analyzed 3,900 customer transactions to uncover revenue drivers and segments. Found loyal customers (79.9% of base) drive most revenue, while discounts show minimal ROI ($0.85 avg difference). Built a 4-page interactive Power BI dashboard with dynamic DAX insights.</p>
+                    <div class="dashboard-gallery">
+                        <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page1_Revenue%20%26%20Sales%20Performance.png" alt="Revenue Dashboard">
+                        <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page2_Customer%20Intelligence.png" alt="Customer Intelligence Dashboard">
+                        <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page3_Shopping%20Behaviour.png" alt="Shopping Behaviour Dashboard">
+                    </div>
                     <div class="data-source">📊 Data Source: Kaggle CSV → SQL Server</div>
                     <div class="tech-stack">
                         <span class="tech-badge">Python</span>
