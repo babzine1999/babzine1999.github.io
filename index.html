@@ -71,6 +71,41 @@
             margin-bottom: 40px;
         }
 
+        .btn-cv {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cv:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .about-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
         .project-card {
             background: white;
             border-radius: 15px;
@@ -240,7 +275,13 @@
                 <span class="skill-tag">Data Visualization</span>
                 <span class="skill-tag">Statistical Analysis</span>
             </div>
+            <a href="Bahija Babzine_cv.pdf" class="btn-cv" target="_blank">📄 Download CV</a>
         </header>
+
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>Data Analyst with 2+ years of experience in industrial environments, having independently designed and deployed a factory's entire data infrastructure (Excel → SQL Server → Power BI). Results-driven and analytical: reduced production waste by <strong>52%</strong> through root-cause analysis. Strong command of Power BI (DAX), SQL Server, and Python, turning raw data into concrete recommendations for management.</p>
+        </section>
 
         <div class="projects">
             <!-- Project 1: Python Project -->
