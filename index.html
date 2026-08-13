@@ -5,543 +5,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bahija Babzine - Data Analyst Portfolio</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1526;
+            color: #e8edf5;
             line-height: 1.6;
-            color: #1a2332;
-            background: #f7f9fc;
         }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
         /* NAV */
         nav {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e9f0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(13, 21, 38, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
-
         .nav-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 18px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 20px 40px;
+            display: flex; justify-content: flex-end; gap: 32px;
         }
-
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.1em;
-            color: #1a2332;
-        }
-
-        .nav-links a {
-            color: #4a5568;
-            text-decoration: none;
-            margin-left: 28px;
-            font-size: 0.92em;
-            font-weight: 500;
+        .nav-inner a {
+            color: #cdd6e0; text-decoration: none; font-weight: 600; font-size: 0.95em;
             transition: color 0.2s ease;
         }
-
-        .nav-links a:hover {
-            color: #2563eb;
-        }
+        .nav-inner a:hover { color: #5dade2; }
 
         /* HERO */
-        header {
+        .hero {
+            display: grid; grid-template-columns: 1fr 340px; gap: 50px; align-items: center;
             padding: 90px 0 60px 0;
         }
-
         .hero-tag {
             display: inline-block;
-            background: #eaf1ff;
-            color: #2563eb;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 600;
-            margin-bottom: 22px;
-            letter-spacing: 0.3px;
-        }
-
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 14px;
-            color: #1a2332;
-            font-weight: 800;
-            line-height: 1.15;
-        }
-
-        header h1 span {
-            color: #2563eb;
-        }
-
-        header .subtitle {
-            font-size: 1.15em;
-            color: #5c6b7a;
-            max-width: 620px;
-            margin-bottom: 34px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            margin-bottom: 56px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 12px 26px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.92em;
-            transition: all 0.2s ease;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: #1a2332;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #1a2332;
-            border: 1.5px solid #d7dee8;
-        }
-
-        .btn-secondary:hover {
-            border-color: #2563eb;
-            color: #2563eb;
-        }
-
-        /* STATS */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            border-top: 1px solid #e5e9f0;
-            padding-top: 40px;
-        }
-
-        .stat-item .stat-num {
-            font-size: 2em;
-            font-weight: 800;
-            color: #2563eb;
-            margin-bottom: 4px;
-        }
-
-        .stat-item .stat-label {
-            font-size: 0.85em;
-            color: #5c6b7a;
-        }
-
-        /* SECTION HEADERS */
-        .section-eyebrow {
-            color: #2563eb;
-            font-size: 0.82em;
+            border: 1.5px solid #5dade2;
+            color: #5dade2;
+            padding: 7px 20px;
+            border-radius: 25px;
+            font-size: 0.78em;
             font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+            letter-spacing: 1px;
+            margin-bottom: 26px;
         }
-
-        .section-title {
-            font-size: 1.9em;
+        .hero h1 {
+            font-size: 3.3em;
             font-weight: 800;
-            color: #1a2332;
-            margin-bottom: 40px;
+            line-height: 1.1;
+            margin-bottom: 22px;
         }
-
-        section {
-            padding: 70px 0;
+        .hero h1 .accent { color: #5dade2; }
+        .hero p.subtitle {
+            font-size: 1.3em;
+            color: #9fb1c2;
+            max-width: 480px;
         }
-
-        /* TIMELINE */
-        .timeline-section {
-            border-top: 1px solid #e5e9f0;
+        .hero p.subtitle .accent { color: #5dade2; font-weight: 600; }
+        .hero-photo {
+            width: 340px; height: 340px; border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #5dade2, #1a2332);
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; border: 4px solid rgba(93,173,226,0.3);
         }
+        .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
 
-        .timeline-subtitle {
-            color: #5c6b7a;
-            margin-top: -24px;
-            margin-bottom: 36px;
-            font-size: 0.95em;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            border-left: 2px solid #e5e9f0;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 34px;
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 20px;
-            align-items: start;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -36px;
-            top: 4px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #2563eb;
-            border: 3px solid #eaf1ff;
-        }
-
-        .timeline-year {
-            font-size: 0.82em;
-            color: #8a95a3;
-            font-weight: 600;
-            padding-top: 2px;
-        }
-
-        .timeline-content h3 {
-            font-size: 1.05em;
-            color: #1a2332;
-            margin-bottom: 3px;
-        }
-
-        .timeline-org {
-            font-size: 0.88em;
-            color: #2563eb;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .timeline-desc {
-            font-size: 0.88em;
-            color: #5c6b7a;
-            line-height: 1.55;
-        }
-
-        /* WHAT I WORK ON */
-        .work-on-section {
-            border-top: 1px solid #e5e9f0;
-        }
-
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .work-card {
-            background: white;
-            border: 1px solid #e5e9f0;
-            border-radius: 12px;
-            padding: 26px;
-            transition: all 0.2s ease;
-        }
-
-        .work-card:hover {
-            border-color: #2563eb;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
-        }
-
-        .work-card .icon {
-            font-size: 1.6em;
-            margin-bottom: 14px;
-        }
-
-        .work-card h3 {
-            font-size: 1.05em;
-            margin-bottom: 8px;
-            color: #1a2332;
-        }
-
-        .work-card p {
-            font-size: 0.88em;
-            color: #5c6b7a;
-            line-height: 1.55;
-        }
-
-        /* PROJECTS */
-        .projects-section {
-            border-top: 1px solid #e5e9f0;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 26px;
-        }
-
-        .project-card {
-            background: white;
-            border: 1px solid #e5e9f0;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.25s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-            border-color: #2563eb;
-        }
-
-        .project-header {
-            padding: 22px 24px 0 24px;
-        }
-
-        .project-header h3 {
-            font-size: 1.2em;
-            margin-bottom: 4px;
-            color: #1a2332;
-        }
-
-        .project-type {
-            font-size: 0.82em;
-            color: #2563eb;
-            font-weight: 600;
-        }
-
-        .project-body {
-            padding: 16px 24px 24px 24px;
-        }
-
-        .project-body p {
-            color: #5c6b7a;
-            margin-bottom: 14px;
-            font-size: 0.9em;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 14px;
-        }
-
-        .tech-badge {
-            background: #eaf1ff;
-            color: #2563eb;
-            padding: 4px 11px;
-            border-radius: 12px;
-            font-size: 0.76em;
-            font-weight: 600;
-        }
-
-        .data-source {
-            background: #f7f9fc;
-            padding: 8px 13px;
-            border-radius: 6px;
-            margin-bottom: 14px;
-            font-size: 0.82em;
-            color: #5c6b7a;
-        }
-
-        .dashboard-gallery {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 14px;
-            overflow-x: auto;
-        }
-
-        .dashboard-gallery img {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid #e5e9f0;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .dashboard-gallery img:hover {
-            transform: scale(1.03);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn {
-            padding: 9px 18px;
-            border: none;
-            border-radius: 7px;
-            cursor: pointer;
-            font-size: 0.85em;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            text-decoration: none;
+        /* ABOUT ME */
+        .about-section { padding: 70px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+        .section-tag {
             display: inline-block;
+            border: 1.5px solid #5dade2;
+            color: #5dade2;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            font-weight: 700;
+            margin-bottom: 36px;
         }
-
-        .btn-project-primary {
-            background: #1a2332;
-            color: white;
+        .about-grid { display: grid; grid-template-columns: 260px 1fr; gap: 50px; align-items: start; }
+        .about-hello { font-size: 2.6em; font-weight: 300; color: white; }
+        .about-hello .name { color: #5dade2; font-weight: 700; }
+        .about-text p {
+            font-size: 1.05em; color: #cdd6e0; line-height: 1.8; margin-bottom: 24px;
         }
-
-        .btn-project-primary:hover {
-            background: #2563eb;
+        .about-text b { color: #5dade2; }
+        .about-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .icon-circle {
+            width: 46px; height: 46px; border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.25);
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; color: #cdd6e0; font-size: 1.1em;
+            transition: all 0.2s ease;
         }
-
-        .btn-project-secondary {
-            background: #f7f9fc;
-            color: #1a2332;
-            border: 1px solid #e5e9f0;
+        .icon-circle:hover { border-color: #5dade2; color: #5dade2; }
+        .pill-btn {
+            padding: 12px 26px; border-radius: 25px; text-decoration: none;
+            font-weight: 700; font-size: 0.9em; border: 1.5px solid rgba(255,255,255,0.25);
+            color: #cdd6e0; transition: all 0.2s ease;
         }
+        .pill-btn.filled { background: #5dade2; border-color: #5dade2; color: #0d1526; }
+        .pill-btn:hover { border-color: #5dade2; color: #5dade2; }
+        .pill-btn.filled:hover { background: #4a9bd6; color: #0d1526; }
 
-        .btn-project-secondary:hover {
-            border-color: #2563eb;
-            color: #2563eb;
+        /* SKILLS */
+        .skills-section { padding: 70px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+        .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .skills-col h3 {
+            color: #5dade2; font-size: 1.15em; margin-bottom: 22px; font-weight: 700;
         }
-
-        /* ABOUT */
-        .about-section {
-            border-top: 1px solid #e5e9f0;
+        .skill-row {
+            display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
         }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .about-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: #eaf1ff;
-            border: 3px solid #2563eb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2563eb;
-            font-size: 0.85em;
-            text-align: center;
-            overflow: hidden;
+        .skill-icon {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(93,173,226,0.12); border: 1.5px solid rgba(93,173,226,0.4);
+            display: flex; align-items: center; justify-content: center; font-size: 1.2em;
             flex-shrink: 0;
         }
-
-        .about-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 15%;
-            border-radius: 50%;
+        .skill-row span.label { color: #e8edf5; font-size: 0.95em; }
+        .skills-col ul { list-style: none; color: #cdd6e0; font-size: 0.92em; }
+        .skills-col ul li { margin-bottom: 10px; padding-left: 16px; position: relative; }
+        .skills-col ul li::before {
+            content: '•'; color: #5dade2; position: absolute; left: 0;
         }
 
-        .about-text p {
-            color: #4a5568;
-            font-size: 1em;
-            line-height: 1.75;
-            margin-bottom: 16px;
+        /* BACKGROUND */
+        .bg-section { padding: 70px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+        .bg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .bg-col h3 {
+            font-size: 1.5em; font-weight: 800; color: white; margin-bottom: 28px;
         }
-
-        .about-text strong {
-            color: #1a2332;
+        .bg-item { display: flex; gap: 16px; margin-bottom: 26px; }
+        .bg-item .bg-icon {
+            width: 48px; height: 48px; border-radius: 50%; background: rgba(93,173,226,0.12);
+            border: 1.5px solid rgba(93,173,226,0.4); display: flex; align-items: center;
+            justify-content: center; font-size: 1.3em; flex-shrink: 0;
         }
+        .bg-item h4 { color: #5dade2; font-size: 1.02em; margin-bottom: 3px; }
+        .bg-item .bg-role { color: white; font-weight: 600; font-size: 0.95em; margin-bottom: 4px; }
+        .bg-item p { color: #9fb1c2; font-size: 0.86em; line-height: 1.5; }
 
-        /* FOOTER */
-        footer {
-            background: #1a2332;
-            padding: 60px 0 40px 0;
-            margin-top: 40px;
+        /* PROJECTS */
+        .projects-section { padding: 70px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+        .project-block { margin-bottom: 70px; }
+        .project-block:last-child { margin-bottom: 0; }
+        .project-num-title { display: flex; align-items: baseline; gap: 22px; margin-bottom: 26px; }
+        .project-num { font-size: 2.8em; font-weight: 800; color: white; opacity: 0.9; }
+        .project-title { font-size: 1.7em; font-weight: 800; color: #5dade2; line-height: 1.2; }
+        .project-media {
+            display: flex; gap: 10px; margin-bottom: 24px; overflow-x: auto;
+            border-radius: 10px;
         }
-
-        footer .container {
-            text-align: center;
+        .project-media img {
+            border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);
+            height: 260px; width: auto; flex-shrink: 0;
         }
-
-        footer h2 {
-            color: white;
-            font-size: 1.7em;
-            margin-bottom: 10px;
-        }
-
-        footer p {
-            color: #9fb1c2;
-            margin-bottom: 28px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 24px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            font-size: 0.9em;
-            font-weight: 500;
+        .project-desc { color: #cdd6e0; font-size: 1em; line-height: 1.75; margin-bottom: 16px; max-width: 850px; }
+        .project-desc b { color: #5dade2; }
+        .project-meta { color: #9fb1c2; font-size: 0.88em; margin-bottom: 22px; }
+        .project-meta b { color: #e8edf5; }
+        .project-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+        .outline-btn {
+            padding: 11px 24px; border: 1.5px solid rgba(255,255,255,0.25); border-radius: 25px;
+            color: #cdd6e0; text-decoration: none; font-size: 0.85em; font-weight: 600;
             transition: all 0.2s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .outline-btn:hover { border-color: #5dade2; color: #5dade2; }
+
+        /* CONTACT */
+        .contact-section { padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+        .contact-title { font-size: 2.3em; font-weight: 300; color: white; margin-bottom: 50px; }
+        .contact-title .accent { color: #5dade2; font-weight: 700; }
+        .contact-rows { display: flex; flex-direction: column; gap: 26px; max-width: 420px; }
+        .contact-row { display: flex; align-items: center; gap: 20px; }
+        .contact-row .icon-circle { width: 52px; height: 52px; font-size: 1.3em; }
+        .contact-row .clabel { color: #5dade2; font-size: 0.85em; font-weight: 700; margin-bottom: 2px; }
+        .contact-row a.cvalue { color: #e8edf5; text-decoration: none; font-size: 1.02em; }
+        .contact-row a.cvalue:hover { color: #5dade2; }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 26px 0; text-align: center; color: #5c6b7a; font-size: 0.82em;
         }
 
-        .contact-links a:hover {
-            background: #2563eb;
-            border-color: #2563eb;
-        }
-
-        .footer-bottom {
-            color: #5c6b7a;
-            font-size: 0.8em;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 24px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.1em;
-            }
-
-            .stats-row {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-photo {
-                margin: 0 auto;
-            }
-
-            .nav-links a {
-                margin-left: 14px;
-                font-size: 0.82em;
-            }
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-photo { margin: 0 auto; width: 220px; height: 220px; }
+            .about-grid, .bg-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .hero h1 { font-size: 2.2em; }
+            .nav-inner { flex-wrap: wrap; gap: 16px; padding: 16px 20px; justify-content: center; }
+            .container { padding: 0 20px; }
         }
     </style>
 </head>
@@ -549,291 +201,239 @@
 
     <nav>
         <div class="nav-inner">
-            <div class="nav-logo">Bahija Babzine</div>
-            <div class="nav-links">
-                <a href="#experience">Experience</a>
-                <a href="#work">Work</a>
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#background">Background</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <div class="container">
-        <header>
-            <div class="hero-tag">Open to opportunities</div>
-            <h1>Hi, I'm Bahija.<br>I turn raw data into <span>decisions.</span></h1>
-            <p class="subtitle">Data Analyst with 2+ years of experience building Power BI dashboards, SQL pipelines, and Python analyses that drive real operational results in industrial environments.</p>
-            <div class="hero-buttons">
-                <a href="Bahija%20Babzine_cv.pdf" class="btn-primary" target="_blank">Download CV</a>
-                <a href="#projects" class="btn-secondary">See Projects</a>
+
+        <div class="hero" id="home">
+            <div>
+                <div class="hero-tag">DATA ANALYST PORTFOLIO</div>
+                <h1>BAHIJA<br><span class="accent">BABZINE</span></h1>
+                <p class="subtitle">I help businesses find <span class="accent">insights</span> through <span class="accent">data</span></p>
             </div>
-
-            <div class="stats-row">
-                <div class="stat-item">
-                    <div class="stat-num">2+</div>
-                    <div class="stat-label">Years of Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">52%</div>
-                    <div class="stat-label">Production Waste Reduced</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">10+</div>
-                    <div class="stat-label">Data Projects Delivered</div>
-                </div>
+            <div class="hero-photo">
+                <img src="photo.png" alt="Bahija Babzine">
             </div>
-        </header>
+        </div>
 
-        <section class="timeline-section" id="experience">
-            <div class="section-eyebrow">Experience</div>
-            <h2 class="section-title">From Computer Science to Data Analytics</h2>
-            <p class="timeline-subtitle">Click a role to see what I built there.</p>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2024–Present</div>
-                    <div class="timeline-content">
-                        <h3>Data Analyst</h3>
-                        <p class="timeline-org">RotoPrint Sarl — Casablanca</p>
-                        <p class="timeline-desc">Independently built the factory's entire data infrastructure (Excel → SQL Server → Power BI); reduced production waste by 52%.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <h3>Data Science Intern</h3>
-                        <p class="timeline-org">3D Smart Factory — Casablanca</p>
-                        <p class="timeline-desc">Built an NLP product recommendation system using collaborative filtering, LSTM/RNN, and fine-tuned BERT.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2021–2023</div>
-                    <div class="timeline-content">
-                        <h3>Master's, Data Science & Intelligent Systems</h3>
-                        <p class="timeline-org">Multidisciplinary Faculty, Nador</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2021</div>
-                    <div class="timeline-content">
-                        <h3>Web Development Intern</h3>
-                        <p class="timeline-org">WebSuccess Sarl — Casablanca</p>
-                        <p class="timeline-desc">Built a web management app for the Royal Moroccan Triathlon Federation (Angular, ASP.NET, Swagger API).</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2020–2021</div>
-                    <div class="timeline-content">
-                        <h3>Bachelor's, Computer Science & Engineering</h3>
-                        <p class="timeline-org">Faculty of Science and Technology, Settat</p>
+        <section class="about-section" id="about">
+            <div class="section-tag">ABOUT ME</div>
+            <div class="about-grid">
+                <div class="about-hello">Hello,<br>I'm <span class="name">Bahija!</span></div>
+                <div class="about-text">
+                    <p><b>Data Analyst</b> with a Master's in Data Science and 2+ years of experience delivering end-to-end BI solutions in an industrial setting. Proficient in <b>Power BI (DAX), SQL Server, and Python</b> for comprehensive data analysis and visualization. Comfortable with end-to-end data analysis, ETL pipelines, dashboard creation, and translating raw data into operational recommendations for management — like a <b>52% reduction in production waste</b> at my current role.</p>
+                    <div class="about-actions">
+                        <a href="https://www.linkedin.com/in/bahija-babzine-a37285207/" class="icon-circle" target="_blank">in</a>
+                        <a href="https://github.com/babzine1999" class="icon-circle" target="_blank">GH</a>
+                        <a href="mailto:bahijababezine@gmail.com" class="icon-circle">✉</a>
+                        <a href="#projects" class="pill-btn">Projects</a>
+                        <a href="Bahija%20Babzine_cv.pdf" class="pill-btn filled" target="_blank">Download CV</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="work-on-section" id="work">
-            <div class="section-eyebrow">What I Work On</div>
-            <h2 class="section-title">From messy data to clear decisions</h2>
-            <div class="work-grid">
-                <div class="work-card">
-                    <div class="icon">📊</div>
-                    <h3>BI Dashboards</h3>
-                    <p>Interactive Power BI dashboards with DAX measures, dynamic insights, and cross-filtering for real business use.</p>
+        <section class="skills-section" id="skills">
+            <div class="section-tag">TECHNICAL SKILLS</div>
+            <div class="skills-grid">
+                <div class="skills-col">
+                    <h3>Programming</h3>
+                    <div class="skill-row"><div class="skill-icon">🐍</div><span class="label">Python</span></div>
+                    <div class="skill-row"><div class="skill-icon">🗄️</div><span class="label">SQL</span></div>
                 </div>
-                <div class="work-card">
-                    <div class="icon">🗄️</div>
-                    <h3>SQL & Data Modeling</h3>
-                    <p>Structuring and querying SQL Server databases to answer concrete business questions with clean, reliable data.</p>
+                <div class="skills-col">
+                    <h3>BI & Analytics Tools</h3>
+                    <div class="skill-row"><div class="skill-icon">📊</div><span class="label">Power BI (DAX)</span></div>
+                    <div class="skill-row"><div class="skill-icon">📈</div><span class="label">Excel Advanced</span></div>
+                    <div class="skill-row"><div class="skill-icon">🗃️</div><span class="label">SQL Server</span></div>
                 </div>
-                <div class="work-card">
-                    <div class="icon">🐍</div>
-                    <h3>Data Cleaning (Python)</h3>
-                    <p>Pandas-based pipelines to clean, transform, and validate raw datasets before analysis.</p>
+                <div class="skills-col">
+                    <h3>Databases & Cloud</h3>
+                    <div class="skill-row"><div class="skill-icon">🔶</div><span class="label">Oracle</span></div>
+                    <div class="skill-row"><div class="skill-icon">❄️</div><span class="label">Snowflake</span></div>
+                    <div class="skill-row"><div class="skill-icon">🔧</div><span class="label">ETL / SSIS</span></div>
                 </div>
-                <div class="work-card">
-                    <div class="icon">🎯</div>
-                    <h3>Operational Insights</h3>
-                    <p>Translating data findings into concrete recommendations — like a 52% reduction in production waste.</p>
+                <div class="skills-col">
+                    <h3>Analysis Methods</h3>
+                    <ul>
+                        <li>Data Modeling</li>
+                        <li>Data Cleaning & Validation</li>
+                        <li>NLP / BERT</li>
+                        <li>Customer Segmentation</li>
+                        <li>Feature Engineering</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-section" id="background">
+            <div class="section-tag">EDUCATION & EXPERIENCE BACKGROUND</div>
+            <div class="bg-grid">
+                <div class="bg-col">
+                    <h3>EDUCATION</h3>
+                    <div class="bg-item">
+                        <div class="bg-icon">🎓</div>
+                        <div>
+                            <h4>Multidisciplinary Faculty, Nador</h4>
+                            <div class="bg-role">Master's, Data Science & Intelligent Systems (2023)</div>
+                            <p>2021–2023</p>
+                        </div>
+                    </div>
+                    <div class="bg-item">
+                        <div class="bg-icon">🎓</div>
+                        <div>
+                            <h4>Faculty of Science and Technology, Settat</h4>
+                            <div class="bg-role">Bachelor's, Computer Science & Engineering (2021)</div>
+                            <p>2020–2021</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-col">
+                    <h3>EXPERIENCE</h3>
+                    <div class="bg-item">
+                        <div class="bg-icon">💼</div>
+                        <div>
+                            <h4>RotoPrint Sarl</h4>
+                            <div class="bg-role">Data Analyst (Full time, 2024 - Present)</div>
+                            <p>Independently designed and deployed the factory's entire data infrastructure; reduced production waste by 52%.</p>
+                        </div>
+                    </div>
+                    <div class="bg-item">
+                        <div class="bg-icon">💼</div>
+                        <div>
+                            <h4>3D Smart Factory</h4>
+                            <div class="bg-role">Data Science Intern (2023)</div>
+                            <p>Built an NLP product recommendation system using collaborative filtering, LSTM/RNN, and fine-tuned BERT.</p>
+                        </div>
+                    </div>
+                    <div class="bg-item">
+                        <div class="bg-icon">💼</div>
+                        <div>
+                            <h4>WebSuccess Sarl</h4>
+                            <div class="bg-role">Web Development Intern (2021)</div>
+                            <p>Built a web management app for the Royal Moroccan Triathlon Federation (Angular, ASP.NET, Swagger API).</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="projects-section" id="projects">
-            <div class="section-eyebrow">Selected Work</div>
-            <h2 class="section-title">Projects</h2>
+            <div class="section-tag">NOTABLE PROJECTS</div>
 
-            <div class="projects">
+            <div class="project-block">
+                <div class="project-num-title">
+                    <div class="project-num">01</div>
+                    <div class="project-title">CUSTOMER SHOPPING BEHAVIOR ANALYSIS</div>
+                </div>
+                <div class="project-media">
+                    <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page1_Revenue%20%26%20Sales%20Performance.png" alt="Revenue Dashboard">
+                    <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page2_Customer%20Intelligence.png" alt="Customer Intelligence Dashboard">
+                    <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page3_Shopping%20Behaviour.png" alt="Shopping Behaviour Dashboard">
+                </div>
+                <p class="project-desc">An end-to-end analysis of 3,900 customer transactions to <b>find revenue drivers and customer segments</b> for an e-commerce business. Found that <b>loyal customers (79.9% of the base) drive most of the revenue</b>, and that current discount campaigns show minimal ROI ($0.85 avg difference). Built a 4-page interactive Power BI dashboard with dynamic DAX insight cards.</p>
+                <div class="project-meta"><b>Tools:</b> Python, SQL Server, Power BI, DAX &nbsp;|&nbsp; <b>Analysis:</b> ETL, Customer Segmentation, RFM-style Analysis</div>
+                <div class="project-buttons">
+                    <a href="https://github.com/babzine1999/customer-shopping-behavior-analysis" class="outline-btn" target="_blank">GitHub Repo</a>
+                </div>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Customer Shopping Behavior Analysis</h3>
-                        <p class="project-type">End-to-End BI Project</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Analyzed 3,900 customer transactions to uncover revenue drivers and segments. Found loyal customers (79.9% of base) drive most revenue, while discounts show minimal ROI ($0.85 avg difference). Built a 4-page interactive Power BI dashboard with dynamic DAX insights.</p>
-                        <div class="dashboard-gallery">
-                            <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page1_Revenue%20%26%20Sales%20Performance.png" alt="Revenue Dashboard">
-                            <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page2_Customer%20Intelligence.png" alt="Customer Intelligence Dashboard">
-                            <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page3_Shopping%20Behaviour.png" alt="Shopping Behaviour Dashboard">
-                        </div>
-                        <div class="data-source">📊 Data Source: Kaggle CSV → SQL Server</div>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">SQL Server</span>
-                            <span class="tech-badge">Power BI</span>
-                            <span class="tech-badge">DAX</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/babzine1999/customer-shopping-behavior-analysis" class="btn btn-project-primary" target="_blank">View Project</a>
-                            <a href="https://github.com/babzine1999/customer-shopping-behavior-analysis" class="btn btn-project-secondary" target="_blank">GitHub</a>
-                        </div>
+            <div class="project-block">
+                <div class="project-num-title">
+                    <div class="project-num">02</div>
+                    <div class="project-title">PRODUCTION & WASTE ANALYSIS</div>
+                </div>
+                <p class="project-desc">A project focusing on <b>reducing industrial production waste</b> at RotoPrint by analyzing daily machine output and scrap across 18 production machines. Identified machine-product mismatches and built a data-integrity validation rule based on machine reel coefficients. This analysis resulted in a <b>52% reduction in monthly waste</b> (25,000 → 12,000 kg/month).</p>
+                <div class="project-meta"><b>Tools:</b> Power BI, DAX, SQL Server &nbsp;|&nbsp; <b>Analysis:</b> Root-Cause Analysis, Data Validation</div>
+                <div class="project-buttons">
+                    <a href="https://github.com/babzine1999" class="outline-btn" target="_blank">GitHub Repo</a>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-num-title">
+                    <div class="project-num">03</div>
+                    <div class="project-title">CAR PRICE PREDICTION</div>
+                </div>
+                <p class="project-desc">A machine learning project to <b>predict used car prices</b> based on vehicle features (mileage, year, brand, engine size). Applied feature engineering and compared multiple regression models to improve prediction accuracy.</p>
+                <div class="project-meta"><b>Tools:</b> Python, scikit-learn, Pandas &nbsp;|&nbsp; <b>Analysis:</b> Regression, Feature Engineering</div>
+                <div class="project-buttons">
+                    <a href="https://github.com/babzine1999" class="outline-btn" target="_blank">GitHub Repo</a>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-num-title">
+                    <div class="project-num">04</div>
+                    <div class="project-title">FILM RATING DATA WAREHOUSE ANALYSIS</div>
+                </div>
+                <p class="project-desc">Designed and queried a <b>data warehouse in Snowflake</b> to analyze film ratings and viewing trends, applying dimensional modeling concepts (fact and dimension tables) to support fast analytical queries.</p>
+                <div class="project-meta"><b>Tools:</b> Snowflake, SQL &nbsp;|&nbsp; <b>Analysis:</b> Dimensional Modeling, Data Warehousing</div>
+                <div class="project-buttons">
+                    <a href="https://github.com/babzine1999" class="outline-btn" target="_blank">GitHub Repo</a>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-num-title">
+                    <div class="project-num">05</div>
+                    <div class="project-title">EMAIL SPAM CLASSIFICATION</div>
+                </div>
+                <p class="project-desc">Built a <b>text classification model</b> to automatically detect spam emails, applying NLP preprocessing techniques (tokenization, TF-IDF) and comparing multiple classification algorithms for best accuracy.</p>
+                <div class="project-meta"><b>Tools:</b> Python, NLP, scikit-learn &nbsp;|&nbsp; <b>Analysis:</b> Text Classification, NLP Preprocessing</div>
+                <div class="project-buttons">
+                    <a href="https://github.com/babzine1999" class="outline-btn" target="_blank">GitHub Repo</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="section-tag">CONTACT INFO</div>
+            <div class="contact-title">Let's <span class="accent">connect</span> and<br><span class="accent">work together!</span></div>
+            <div class="contact-rows">
+                <div class="contact-row">
+                    <div class="icon-circle">📞</div>
+                    <div>
+                        <div class="clabel">Phone</div>
+                        <a class="cvalue" href="tel:+212659905370">+212 659 905 370</a>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Production & Waste Analysis</h3>
-                        <p class="project-type">Power BI Dashboard</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Analyzed daily machine output and scrap across 18 production machines. Identified machine-product mismatches and data integrity issues using reel-coefficient validation rules, resulting in a 52% reduction in monthly waste.</p>
-                        <div class="data-source">📊 Data Source: SQL Server (Industrial ERP)</div>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Power BI</span>
-                            <span class="tech-badge">DAX</span>
-                            <span class="tech-badge">SQL Server</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/babzine1999" class="btn btn-project-primary" target="_blank">View Project</a>
-                            <a href="https://github.com/babzine1999" class="btn btn-project-secondary" target="_blank">GitHub</a>
-                        </div>
+                <div class="contact-row">
+                    <div class="icon-circle">✉</div>
+                    <div>
+                        <div class="clabel">Email</div>
+                        <a class="cvalue" href="mailto:bahijababezine@gmail.com">bahijababezine@gmail.com</a>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Car Price Prediction</h3>
-                        <p class="project-type">Machine Learning</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Built a regression model to predict used car prices based on vehicle features, using feature engineering and model evaluation to improve prediction accuracy.</p>
-                        <div class="data-source">📊 Data Source: CSV Dataset</div>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">scikit-learn</span>
-                            <span class="tech-badge">Pandas</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/babzine1999" class="btn btn-project-primary" target="_blank">View Project</a>
-                            <a href="https://github.com/babzine1999" class="btn btn-project-secondary" target="_blank">GitHub</a>
-                        </div>
+                <div class="contact-row">
+                    <div class="icon-circle">in</div>
+                    <div>
+                        <div class="clabel">LinkedIn</div>
+                        <a class="cvalue" href="https://www.linkedin.com/in/bahija-babzine-a37285207/" target="_blank">linkedin.com/in/bahija-babzine</a>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Film Rating Data Analysis</h3>
-                        <p class="project-type">Data Warehouse</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Designed and queried a data warehouse to analyze film ratings and trends using Snowflake, applying dimensional modeling concepts.</p>
-                        <div class="data-source">📊 Data Source: Snowflake Data Warehouse</div>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Snowflake</span>
-                            <span class="tech-badge">SQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/babzine1999" class="btn btn-project-primary" target="_blank">View Project</a>
-                            <a href="https://github.com/babzine1999" class="btn btn-project-secondary" target="_blank">GitHub</a>
-                        </div>
+                <div class="contact-row">
+                    <div class="icon-circle">GH</div>
+                    <div>
+                        <div class="clabel">GitHub</div>
+                        <a class="cvalue" href="https://github.com/babzine1999" target="_blank">github.com/babzine1999</a>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Email Spam Classification</h3>
-                        <p class="project-type">NLP / Machine Learning</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Built a text classification model to detect spam emails, applying NLP preprocessing techniques and evaluating multiple classification algorithms.</p>
-                        <div class="data-source">📊 Data Source: Email Dataset</div>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">NLP</span>
-                            <span class="tech-badge">scikit-learn</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/babzine1999" class="btn btn-project-primary" target="_blank">View Project</a>
-                            <a href="https://github.com/babzine1999" class="btn btn-project-secondary" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Multi-Company Stock Dashboard</h3>
-                        <p class="project-type">Power BI Dashboard</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Built a Power BI dashboard to track and compare stock management metrics across multiple companies, with automated low-stock alerts and consumption trends.</p>
-                        <div class="data-source">📊 Data Source: Excel & SQL Server</div>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Power BI</span>
-                            <span class="tech-badge">DAX</span>
-                            <span class="tech-badge">Excel</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/babzine1999" class="btn btn-project-primary" target="_blank">View Project</a>
-                            <a href="https://github.com/babzine1999" class="btn btn-project-secondary" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <section class="about-section" id="about">
-            <div class="section-eyebrow">About Me</div>
-            <h2 class="section-title">A bit more about my work</h2>
-            <div class="about-grid">
-                <div class="about-photo">
-                    <img src="photo.png" alt="Bahija Babzine">
-                    <!-- Photo ajoutée -->
-                </div>
-                <div class="about-text">
-                    <p>I'm a Data Analyst based in Casablanca, Morocco, with a Master's degree in Data Science and Intelligent Systems. For the past 2+ years, I've worked at <strong>RotoPrint</strong>, an industrial manufacturing company, where I independently designed and deployed their entire data infrastructure — from Excel to SQL Server to Power BI — without any IT support.</p>
-                    <p>What I'm proudest of: identifying machine-product mismatches across 18 production machines that led to a <strong>52% reduction in monthly waste</strong>, and building a fraud-detection validation rule that revealed inflated production reporting using machine reel coefficients.</p>
-                    <p>I'm currently looking for new opportunities where I can keep turning messy, real-world data into decisions that matter.</p>
-                </div>
-            </div>
-        </section>
     </div>
 
-    <footer id="contact">
-        <div class="container">
-            <h2>Let's Connect</h2>
-            <p>Interested in collaborating or discussing data projects? Reach out!</p>
-            <div class="contact-links">
-                <a href="https://www.linkedin.com/in/bahija-babzine-a37285207/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/babzine1999" target="_blank">GitHub</a>
-                <a href="mailto:bahijababezine@gmail.com">Email</a>
-                <a href="Bahija%20Babzine_cv.pdf" target="_blank">Download CV</a>
-            </div>
-            <div class="footer-bottom">
-                © 2026 Bahija Babzine — Built with HTML & CSS, hosted on GitHub Pages
-            </div>
-        </div>
+    <footer>
+        © 2026 Bahija Babzine — Built with HTML & CSS, hosted on GitHub Pages
     </footer>
 
 </body>
