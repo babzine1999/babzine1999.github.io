@@ -52,6 +52,46 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 22px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroIn 0.9s ease forwards;
+        }
+        .hero h1 .line1 {
+            display: block;
+            opacity: 0;
+            transform: translateX(-40px);
+            animation: slideIn 0.8s ease forwards 0.15s;
+        }
+        .hero h1 .line2 {
+            display: block;
+            opacity: 0;
+            transform: translateX(-40px);
+            animation: slideIn 0.8s ease forwards 0.4s;
+        }
+        @keyframes heroIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .hero-tag {
+            opacity: 0;
+            animation: fadeInSimple 0.7s ease forwards;
+        }
+        .hero p.subtitle {
+            opacity: 0;
+            animation: fadeInSimple 0.8s ease forwards 0.7s;
+        }
+        .hero-photo {
+            opacity: 0;
+            transform: scale(0.85);
+            animation: photoIn 0.9s ease forwards 0.3s;
+        }
+        @keyframes fadeInSimple {
+            to { opacity: 1; }
+        }
+        @keyframes photoIn {
+            to { opacity: 1; transform: scale(1); }
         }
         .hero h1 .accent { color: #5dade2; }
         .hero p.subtitle {
@@ -186,6 +226,25 @@
             padding: 26px 0; text-align: center; color: #5c6b7a; font-size: 0.82em;
         }
 
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-media img.reveal-img {
+            opacity: 0;
+            transform: translateY(25px) scale(0.97);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .project-media img.reveal-img.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
         @media (max-width: 900px) {
             .hero { grid-template-columns: 1fr; text-align: center; }
             .hero-photo { margin: 0 auto; width: 220px; height: 220px; }
@@ -215,7 +274,7 @@
         <div class="hero" id="home">
             <div>
                 <div class="hero-tag">DATA ANALYST PORTFOLIO</div>
-                <h1>BAHIJA<br><span class="accent">BABZINE</span></h1>
+                <h1><span class="line1">BAHIJA</span><span class="line2 accent">BABZINE</span></h1>
                 <p class="subtitle">I help businesses find <span class="accent">insights</span> through <span class="accent">data</span></p>
             </div>
             <div class="hero-photo">
@@ -223,7 +282,7 @@
             </div>
         </div>
 
-        <section class="about-section" id="about">
+        <section class="about-section reveal" id="about">
             <div class="section-tag">ABOUT ME</div>
             <div class="about-grid">
                 <div class="about-hello">Hello,<br>I'm <span class="name">Bahija!</span></div>
@@ -240,7 +299,7 @@
             </div>
         </section>
 
-        <section class="skills-section" id="skills">
+        <section class="skills-section reveal" id="skills">
             <div class="section-tag">TECHNICAL SKILLS</div>
             <div class="skills-grid">
                 <div class="skills-col">
@@ -273,7 +332,7 @@
             </div>
         </section>
 
-        <section class="bg-section" id="background">
+        <section class="bg-section reveal" id="background">
             <div class="section-tag">EDUCATION & EXPERIENCE BACKGROUND</div>
             <div class="bg-grid">
                 <div class="bg-col">
@@ -325,7 +384,7 @@
             </div>
         </section>
 
-        <section class="projects-section" id="projects">
+        <section class="projects-section reveal" id="projects">
             <div class="section-tag">NOTABLE PROJECTS</div>
 
             <div class="project-block">
@@ -334,9 +393,9 @@
                     <div class="project-title">CUSTOMER SHOPPING BEHAVIOR ANALYSIS</div>
                 </div>
                 <div class="project-media">
-                    <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page1_Revenue%20%26%20Sales%20Performance.png" alt="Revenue Dashboard">
-                    <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page2_Customer%20Intelligence.png" alt="Customer Intelligence Dashboard">
-                    <img src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page3_Shopping%20Behaviour.png" alt="Shopping Behaviour Dashboard">
+                    <img class="reveal-img" src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page1_Revenue%20%26%20Sales%20Performance.png" alt="Revenue Dashboard">
+                    <img class="reveal-img" src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page2_Customer%20Intelligence.png" alt="Customer Intelligence Dashboard">
+                    <img class="reveal-img" src="https://raw.githubusercontent.com/babzine1999/customer-shopping-behavior-analysis/main/Page3_Shopping%20Behaviour.png" alt="Shopping Behaviour Dashboard">
                 </div>
                 <p class="project-desc">An end-to-end analysis of 3,900 customer transactions to <b>find revenue drivers and customer segments</b> for an e-commerce business. Found that <b>loyal customers (79.9% of the base) drive most of the revenue</b>, and that current discount campaigns show minimal ROI ($0.85 avg difference). Built a 4-page interactive Power BI dashboard with dynamic DAX insight cards.</p>
                 <div class="project-meta"><b>Tools:</b> Python, SQL Server, Power BI, DAX &nbsp;|&nbsp; <b>Analysis:</b> ETL, Customer Segmentation, RFM-style Analysis</div>
@@ -395,7 +454,7 @@
 
         </section>
 
-        <section class="contact-section" id="contact">
+        <section class="contact-section reveal" id="contact">
             <div class="section-tag">CONTACT INFO</div>
             <div class="contact-title">Let's <span class="accent">connect</span> and<br><span class="accent">work together!</span></div>
             <div class="contact-rows">
@@ -435,6 +494,18 @@
     <footer>
         © 2026 Bahija Babzine — Built with HTML & CSS, hosted on GitHub Pages
     </footer>
+
+    <script>
+        const revealEls = document.querySelectorAll('.reveal, .reveal-img');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
