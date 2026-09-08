@@ -217,85 +217,20 @@
         .project-num-title { display: flex; align-items: baseline; gap: 22px; margin-bottom: 26px; }
         .project-num { font-size: 2.8em; font-weight: 800; color: white; opacity: 0.9; }
         .project-title { font-size: 1.7em; font-weight: 800; color: #5dade2; line-height: 1.2; }
-   .project-media {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    margin-bottom: 24px;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #111c30;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 14px;
-    cursor: zoom-in;
-    display: none;
-}
-
-.project-media img.active {
-    display: block;
-}
-
-.gallery-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: rgba(13,21,38,0.85);
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 5;
-    transition: all 0.2s ease;
-}
-
-.gallery-btn:hover {
-    background: #5dade2;
-    color: #0d1526;
-}
-
-.gallery-prev {
-    left: 15px;
-}
-
-.gallery-next {
-    right: 15px;
-}
-
-.gallery-dots {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 7px;
-    z-index: 5;
-}
-
-.gallery-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.35);
-    cursor: pointer;
-}
-
-.gallery-dot.active {
-    background: #5dade2;
-    width: 22px;
-    border-radius: 10px;
-}
-
+        .project-media {
+            display: flex; gap: 10px; margin-bottom: 24px; overflow-x: auto;
+            border-radius: 10px;
+        }
+        .project-media img {
+            border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);
+            height: 260px; width: auto; flex-shrink: 0;
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
+        }
+        .project-media img:hover {
+            transform: scale(1.02);
+            border-color: #5dade2;
+        }
 
         /* LIGHTBOX */
         .lightbox {
@@ -596,45 +531,24 @@
                 </div>
                 <p class="project-desc">A project focusing on <b>reducing industrial production waste</b> at RotoPrint by analyzing daily machine output and scrap across 18 production machines. Identified machine-product mismatches and built a data-integrity validation rule based on machine reel coefficients. This analysis resulted in a <b>52% reduction in monthly waste</b> (25,000 → 12,000 kg/month).</p>
                 <div class="project-meta"><b>Tools:</b> Power BI, DAX, SQL Server &nbsp;|&nbsp; <b>Analysis:</b> Root-Cause Analysis, Data Validation</div>
-                <div class="project-buttons">
-                    <a href="https://github.com/babzine1999" class="outline-btn" target="_blank">GitHub Repo</a>
-                </div>
             </div>
 
             <div class="project-block">
                 <div class="project-num-title">
                     <div class="project-num">07</div>
-                    <div class="project-title">CAR PRICE PREDICTION</div>
+                    <div class="project-title">FILM RATING DATA WAREHOUSE ANALYSIS</div>
                 </div>
-                <p class="project-desc">A machine learning project to <b>predict used car prices</b> based on vehicle features (mileage, year, brand, engine size). Applied feature engineering and compared multiple regression models to improve prediction accuracy.</p>
-                <div class="project-meta"><b>Tools:</b> Python, scikit-learn, Pandas &nbsp;|&nbsp; <b>Analysis:</b> Regression, Feature Engineering</div>
-                <div class="project-buttons">
-                    <a href="https://github.com/babzine1999" class="outline-btn" target="_blank">GitHub Repo</a>
-                </div>
+                <p class="project-desc">Designed and queried a <b>data warehouse in Snowflake</b> to analyze film ratings and viewing trends, applying dimensional modeling concepts (fact and dimension tables) to support fast analytical queries.</p>
+                <div class="project-meta"><b>Tools:</b> Snowflake, SQL &nbsp;|&nbsp; <b>Analysis:</b> Dimensional Modeling, Data Warehousing</div>
             </div>
 
             <div class="project-block">
                 <div class="project-num-title">
                     <div class="project-num">08</div>
-                    <div class="project-title">FILM RATING DATA WAREHOUSE ANALYSIS</div>
-                </div>
-                <p class="project-desc">Designed and queried a <b>data warehouse in Snowflake</b> to analyze film ratings and viewing trends, applying dimensional modeling concepts (fact and dimension tables) to support fast analytical queries.</p>
-                <div class="project-meta"><b>Tools:</b> Snowflake, SQL &nbsp;|&nbsp; <b>Analysis:</b> Dimensional Modeling, Data Warehousing</div>
-                <div class="project-buttons">
-                    <a href="https://github.com/babzine1999" class="outline-btn" target="_blank">GitHub Repo</a>
-                </div>
-            </div>
-
-            <div class="project-block">
-                <div class="project-num-title">
-                    <div class="project-num">09</div>
                     <div class="project-title">EMAIL SPAM CLASSIFICATION</div>
                 </div>
                 <p class="project-desc">Built a <b>text classification model</b> to automatically detect spam emails, applying NLP preprocessing techniques (tokenization, TF-IDF) and comparing multiple classification algorithms for best accuracy.</p>
                 <div class="project-meta"><b>Tools:</b> Python, NLP, scikit-learn &nbsp;|&nbsp; <b>Analysis:</b> Text Classification, NLP Preprocessing</div>
-                <div class="project-buttons">
-                    <a href="https://github.com/babzine1999" class="outline-btn" target="_blank">GitHub Repo</a>
-                </div>
             </div>
 
         </section>
@@ -745,73 +659,6 @@
             });
         }, { threshold: 0.15 });
         revealEls.forEach(el => observer.observe(el));
-        document.querySelectorAll('.project-media').forEach(gallery => {
-
-    const images = gallery.querySelectorAll('img');
-
-    // S'il n'y a qu'une seule image
-    if (images.length <= 1) {
-        images[0]?.classList.add('active');
-        return;
-    }
-
-    let current = 0;
-
-    // Flèche gauche
-    const prev = document.createElement('button');
-    prev.className = 'gallery-btn gallery-prev';
-    prev.innerHTML = '‹';
-
-    // Flèche droite
-    const next = document.createElement('button');
-    next.className = 'gallery-btn gallery-next';
-    next.innerHTML = '›';
-
-    // Points
-    const dots = document.createElement('div');
-    dots.className = 'gallery-dots';
-
-    images.forEach((img, index) => {
-        img.classList.remove('reveal-img');
-
-        const dot = document.createElement('span');
-        dot.className = 'gallery-dot';
-
-        dot.addEventListener('click', () => {
-            current = index;
-            showImage();
-        });
-
-        dots.appendChild(dot);
-    });
-
-    gallery.appendChild(prev);
-    gallery.appendChild(next);
-    gallery.appendChild(dots);
-
-    function showImage() {
-        images.forEach((img, i) => {
-            img.classList.toggle('active', i === current);
-        });
-
-        dots.querySelectorAll('.gallery-dot').forEach((dot, i) => {
-            dot.classList.toggle('active', i === current);
-        });
-    }
-
-    prev.addEventListener('click', () => {
-        current = (current - 1 + images.length) % images.length;
-        showImage();
-    });
-
-    next.addEventListener('click', () => {
-        current = (current + 1) % images.length;
-        showImage();
-    });
-
-    showImage();
-});
-
     </script>
 
 </body>
