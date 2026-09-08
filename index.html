@@ -224,7 +224,36 @@
         .project-media img {
             border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);
             height: 260px; width: auto; flex-shrink: 0;
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
         }
+        .project-media img:hover {
+            transform: scale(1.02);
+            border-color: #5dade2;
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.92);
+            z-index: 1000;
+            align-items: center; justify-content: center;
+            cursor: zoom-out;
+            padding: 40px;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 95%; max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute; top: 24px; right: 34px;
+            color: white; font-size: 2.2em; cursor: pointer;
+            line-height: 1; font-weight: 300;
+        }
+        .lightbox-close:hover { color: #5dade2; }
         .project-desc { color: #cdd6e0; font-size: 1em; line-height: 1.75; margin-bottom: 16px; max-width: 850px; }
         .project-desc b { color: #5dade2; }
         .project-meta { color: #9fb1c2; font-size: 0.88em; margin-bottom: 22px; }
@@ -415,7 +444,6 @@
         <section class="projects-section reveal" id="projects">
             <div class="section-tag">NOTABLE PROJECTS</div>
 
-            
             <div class="project-block">
                 <div class="project-num-title">
                     <div class="project-num">01</div>
@@ -430,9 +458,8 @@
                     <a href="https://github.com/babzine1999/COFFEE-SHOP-PERFORMANCE-Weather-Impact-Analysis" class="outline-btn" target="_blank">GitHub Repo</a>
                 </div>
             </div>
-            
-            
-               <div class="project-block">
+
+            <div class="project-block">
                 <div class="project-num-title">
                     <div class="project-num">02</div>
                     <div class="project-title">CUSTOMER SHOPPING BEHAVIOR ANALYSIS</div>
@@ -504,10 +531,9 @@
                 </div>
                 <p class="project-desc">A project focusing on <b>reducing industrial production waste</b> at RotoPrint by analyzing daily machine output and scrap across 18 production machines. Identified machine-product mismatches and built a data-integrity validation rule based on machine reel coefficients. This analysis resulted in a <b>52% reduction in monthly waste</b> (25,000 → 12,000 kg/month).</p>
                 <div class="project-meta"><b>Tools:</b> Power BI, DAX, SQL Server &nbsp;|&nbsp; <b>Analysis:</b> Root-Cause Analysis, Data Validation</div>
-                
+             
             </div>
 
-       
 
             <div class="project-block">
                 <div class="project-num-title">
@@ -526,7 +552,7 @@
                 </div>
                 <p class="project-desc">Built a <b>text classification model</b> to automatically detect spam emails, applying NLP preprocessing techniques (tokenization, TF-IDF) and comparing multiple classification algorithms for best accuracy.</p>
                 <div class="project-meta"><b>Tools:</b> Python, NLP, scikit-learn &nbsp;|&nbsp; <b>Analysis:</b> Text Classification, NLP Preprocessing</div>
-             
+               
             </div>
 
         </section>
